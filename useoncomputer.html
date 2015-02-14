@@ -1,0 +1,128 @@
+<!--
+Qube
+ Copyright (C) 2015 Paul Nykiel
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<html>
+<head>
+    <title>
+        Qube
+    </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="bootstrap-theme.css">
+</head>
+<body>
+<a href="https://plus.google.com/116602622663680471876" rel="publisher"></a>
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Qube</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="index.htm">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Use Qube<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="discover.htm">Discover Qube</a></li>
+                        <li><a href="build.html">Build your own Qubes</a></li>
+                        <li><a href="useonline.html">Use the online IDE</a></li>
+                        <li><a href="useoncomputer.html">Use the IDE on your own computer</a></li>
+                    </ul>
+                </li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="getinvolved.html">Get involved</a></li>
+                <li><a href="sponsors.html">Sponsors</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+    <h1>Use the IDE on your computer (with a local webserver)</h1>
+    This tutorial will show you how to install the Qube-IDE on your local machine, we first will show you how to install the
+    Apache-Webserver (using the XAMPP-Project) and the how to set up the necessary files. This Method is only for people that
+    have some experience with web-development and don't mind that they maybe get some unreported issues. This method is good
+    for trying the bleeding edge of the development but unsupported!
+    <h3>Only try this if you are an experienced user who wants to try the latest (and maybe unstable) builds!</h3>
+    <div class="jumbotron">
+        <ul>
+            <li>
+                First you need to install XAMPP, this is different on every OS, but a detailed description can be found on the internet
+            </li>
+            <li>
+                Clone or download the Qube repository. Copy the IDE folder in your XAMPP htdocs directory, the exact location depends
+                on your installation, on windows it is C:/xampp/htdocs, on linux /opt/lampp/htcdocs by default
+            </li>
+            <li>
+                Start XAMPP, this can either be done via the XAMPP-Controll Panel on Windows or via the XAMPP-Gui on Linux or via the
+                Terminal (in the default configuration run <kbd>sudo /opt/lampp/lampp start</kbd>), you need to run at least the
+                Apache-Webserver and MySQL
+            </li>
+            <li>
+                Open your favourite browser and visit the Website <a href="http://localhost/phpmyadmin/">localhost/phpmyadmin</a>
+            </li>
+            <li>
+                In the sidebar select "New" and add a new database it should be called "qubeide".
+            </li>
+            <li>
+                Select the new database in the sidebar, now click on import in the topbar. Select the SQL-Dump which can be found in
+                your local copy of the repository. <br>
+                Select UTF-8 as the charset. <br>
+                Set the checkbox at "Allow the interruption of an import.",<br>
+                write 0 in the next field ("Skip this number of queries"),<br>
+                select SQL as format.<br>
+                Set the compatibility mode to none and set the checkbox "Do not use AUTO_INCREMENT".<br>
+                Now click on "Go" and you should see some new tables in the Database!
+            </li>
+            <li>
+                In the top bar select "Privileges" then click on add user. The username is "Admin"and the password is "j5UEUdrhx8F83eSp",
+                grant all permissions to the new user and click add.
+            </li>
+            <li>
+                In your browser go to <a href="http://localhost/Qube/">localhost/Qube</a>
+            </li>
+            <li>
+                Login with the user "test@mail.com" and the password "test", or register your own account (codes are testcode1 to testcode9)
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>
