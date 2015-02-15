@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<qubes>
+    <sensors>
+        <sensor name="Touch">
+            <values type="Text" sign="">
+                <option>Pressed</option>
+                <option>Released</option>
+            </values>
+        </sensor>
+        <sensor name="Light">
+            <values type="Number" sign="%">
+                <min>0</min>
+                <max>100</max>
+            </values>
+        </sensor>
+    </sensors>
+    <actors>
+        <actor name="Multicolor-LED">
+            <values type="Text" sign="Color">
+                <option>Red</option>
+                <option>Green</option>
+                <option>Yellow</option>
+            </values>
+        </actor>
+        <actor name="Motor">
+            <values type="Number" sign="%">
+                <min>-100</min>
+                <max>100</max>
+            </values>
+        </actor>
+    </actors>
+    <logic>
+        <logic
+    </logic>
+</qubes>
