@@ -21,8 +21,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <a href="#addingqubes">Adding Qubes</a><br>
 <a href="#creatingactions">Creating Actions</a><br>
 <a href="#connectingqubes">Connecting Qubes</a><br>
-<a href="#advanced">Advanced</a><br>
-<a href="#movequbes">Move Qubes</a><br>
 <a href="#deletequbesactionsconnections">Delete Qubes, Actions and Connections</a><br>
 <a href="#expert">Expert</a><br>
 <a href="#addingcustomqubes">Adding custom Qubes</a><br>
@@ -40,13 +38,23 @@ triggers actions on all connected output qubes (in this case sets the output to 
 
 <h2 id="basics">Basics</h2>
 <h3 id="addingqubes">Adding Qubes</h3>
+To add a Qube select one of the three possible categories in the navigation-bar (input, output or logic) and click on it.
+In the dropdown menu select the type of Qube you want to add, for example a motor. Now the Qube should be displayed on your
+workspace. To move the Qube simply click on it and move it with the mouse while the mouse is pressed (Drag and Drop).
 <h3 id="creatingactions">Creating Actions</h3>
+To create a action click on the button you want to add a action to, a window get opened where you can select the parameters.
+If you want to add a action to a sensor you can choose wheter the value of the sensorshould be larger, smaller or as large
+as the value you are entering to trigger the action. An output Qube only has one option: the value the output should take, for
+a motor for example this means the speed.
 <h3 id="connectingqubes">Connecting Qubes</h3>
-
-<h2 id="advanced">Advanced</h2>
-<h3 id="movequbes">Move Qubes</h3>
+To connect Qubes you first need to add an action to both Qubes you want to connect
+(see <a href="#creatingactions">Creating Actions</a>). Then you can click "Connect" Button on the first Qube, now a connection
+line should be attached to your mouse. By pressing <kbd>ESC</kbd> you can release the line, to connect just click on the second Qube
+but be aware that you can't connect Qubes of the same type (for example two inputs).
 <h3 id="deletequbesactionsconnections">Delete Qubes, Actions and Connections</h3>
-
+By clicking on the X in the top right corner of a Qube you can delete a Qube, this deletes all it's connections and all it's actions.
+An action can be deleted by clicking on it, you will see a dialog which will ask you if you are sure, so that you can't delete a
+action if you do not want to. A connection can be deleted by clicking on the X in the middle of the connection.
 <h2 id="expert">Expert</h2>
 <h3 id="addingcustomqubes">Adding custom Qubes</h3>
 <h3 id="shareyourprogramsonline">Share your programs online</h3>

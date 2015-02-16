@@ -207,7 +207,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 					</div>
 					<div class="modal-body">
 						<?php
-							include("help.htm");
+							include("dialogs/help.htm");
 						?>
 					</div>
 				</div>
@@ -223,7 +223,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 					</div>
 					<div class="modal-body">
 						<?php
-						include("settings.php");
+						include("dialogs/settings.php");
 						?>
 					</div>
 				</div>
