@@ -16,6 +16,24 @@ GNU General Public License for more details.
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+function newFile(){
+    x_box = [];
+    y_box = [];
+    type = [];
+    cate = [];
+    actions = new Array([]);
+
+    connection2x = [];
+    connection2y = [];
+
+    connection1 = [];
+    connection2 = [];
+
+    updateBoxes();
+    updateLines();
+}
+
+
 function saveFile(){
 // Create our XMLHttpRequest object
     var hr = new XMLHttpRequest();
@@ -56,7 +74,8 @@ function saveFile(){
     hr.onreadystatechange = function() {
         if(hr.readyState == 4 && hr.status == 200) {
             var return_data = hr.responseText;
-            if(return_data!="")
+            console.log(return_data);
+            /*if(return_data!="")
             {
                 BootstrapDialog.show({
                     title: "Error while saving!",
@@ -70,7 +89,7 @@ function saveFile(){
                         }
                     ]
                 });
-            }
+            }*/
         }
     };
 // Send the data to PHP now... and wait for response to update the status div

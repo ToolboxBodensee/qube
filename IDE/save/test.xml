@@ -2,15 +2,15 @@
 <qube>
   <X-Value length="2">
     <X0>100</X0>
-    <X1>683</X1>
+    <X1>647</X1>
   </X-Value>
   <Y-Value length="2">
     <Y0>100</Y0>
-    <Y1>95</Y1>
+    <Y1>59</Y1>
   </Y-Value>
   <Type length="2">
     <Type0>Touch</Type0>
-    <Type1>Motor</Type1>
+    <Type1>LED</Type1>
   </Type>
   <Cate length="2">
     <Cate0>Sensor</Cate0>
@@ -26,10 +26,10 @@
   </Connections>
   <Action length="3">
     <Action0 length="1">
-      <Action0-0>L12</Action0-0>
+      <Action0-0>L23</Action0-0>
     </Action0>
     <Action1 length="1">
-      <Action1-0>23</Action1-0>
+      <Action1-0>12</Action1-0>
     </Action1>
   </Action>
 </qube>

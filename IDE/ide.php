@@ -39,6 +39,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	<body onload="init()" >
 		<?php
 		require_once("config.php");
+		require_once("qubes/customqubes.php");
+
+
 		if(!isset($_POST["email"])||!isset($_POST["password"]))
 			exit();
 		$email = mysql_real_escape_string($_POST["email"]);
@@ -65,6 +68,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 		echo("<script>const USERNAME='".$email."';</script>")
 		?>
+
 		<nav class="navbar navbar-inverse navbar-static-top">
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
@@ -84,6 +88,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">File<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
+								<li onclick="newFile()"><a href="#">New</a></li>
 								<li onClick="openFile()"><a href="#">Open</a></li>
 								<li onClick="saveFile()"><a href="#">Save</a></li>
 							</ul>
@@ -93,12 +98,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Input<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li onclick="addSensor('Touch')"><a href="#">Touch</a></li>
-								<li onclick="addSensor('Distance')"><a href="#">Distance</a></li>
-								<li onclick="addSensor('Brightness')"><a href="#">Brightness</a></li>
-								<li onclick="addSensor('Sound')"><a href="#">Sound</a></li>
-								<li onclick="addSensor('Humidity')"><a href="#">Humidity</a></li>
-
+								<?php loadSensor(); ?>
 							</ul>
 						</li>
 					</ul>
@@ -106,10 +106,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Output<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li onclick="addOutput('Motor')"><a href="#">Motor</a></li>
-								<li onclick="addOutput('LED')"><a href="#">LED</a></li>
-								<li onclick="addOutput('Display')"><a href="#">Display</a></li>
-								<li onclick="addOutput('Speaker')"><a href="#">Speaker</a></li>
+								<?php loadOutput(); ?>
 							</ul>
 						</li>
 					</ul>

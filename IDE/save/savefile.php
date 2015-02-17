@@ -1,4 +1,5 @@
-<!--
+<?php
+/*
 Qube-IDE
 Copyright (C) 2015 Paul Nykiel
 
@@ -14,8 +15,7 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
--->
-<?php
+*/
 $p_x_box = $_POST["x_box"];
 $p_y_box = $_POST["y_box"];
 $p_type = $_POST["type"];
