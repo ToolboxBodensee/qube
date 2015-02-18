@@ -66,8 +66,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 			exit();
 		}
 
-		echo("<script>const USERNAME='".$email."';</script>")
 		?>
+
 
 		<nav class="navbar navbar-inverse navbar-static-top">
 			<div class="container-fluid">
@@ -157,6 +157,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 								</select>
 							</div>
 							<div class="input-group">
+                                <p id="action_options"></p>
 								<input type="number" class="form-control" placeholder="Value" aria-describedby="basic-addon" id="switch_value" min="0" max="100">
 								<span class="input-group-addon" id="basic-addon">%</span>
 							</div>
@@ -181,6 +182,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 						<form id="formaddakt" onsubmit="return false">
 							<label>The Output should be:</label>
 							<div class="input-group">
+                                <p id="action_options"></p>
 								<input type="number" class="form-control" placeholder="Value" aria-describedby="basic-addon" id="state_value" min="0" max="100">
 								<span class="input-group-addon" id="basic-addon">%</span>
 							</div>
@@ -237,5 +239,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 		<script src="js/bootstrap-dialog.min.js"></script>
+		<script type="text/javascript">
+			<?php loadValues(); ?>
+		</script>
+		<script type="text/javascript">
+			<?php echo 'var USERNAME = "'.$email.'"'; ?>
+		</script>
 	</body>
 </html>

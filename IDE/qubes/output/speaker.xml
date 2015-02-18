@@ -1,4 +1,6 @@
 <?xml version="1.0"?>
 <actor>
     <name>Speaker</name>
+    <values type="text">
+    </values>
 </actor>

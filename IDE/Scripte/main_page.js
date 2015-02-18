@@ -32,7 +32,7 @@ var x_box = [];
 var y_box = [];
 var type = [];
 var cate = [];
-var actions = new Array([]);
+var actions = [[]];
 
 var connection2x = [];
 var connection2y = [];

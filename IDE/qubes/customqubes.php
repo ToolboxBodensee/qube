@@ -36,3 +36,35 @@ function loadOutput(){
         echo '<li onclick="addOutput(\''.$name.'\')"><a href="#">'.$name.'</a></li>';
     }
 }
+
+function loadValues(){
+    echo
+    'var VALUES = [];
+    var MIN = [];
+    var MAX = [];
+    var OPTIONS = [[]];';
+
+    $file = simplexml_load_file('qubes/qubes.xml');
+    foreach ($file->{'actor'} as $fname) {
+        $fname = $fname->attributes();
+        $output = simplexml_load_file('qubes/output/' . $fname);
+        $name = $output->{'name'};
+        $type = $output->{'values'};
+        echo 'VALUES["'.$name.'"]="'.($type->attributes()).'";';
+        switch($type->attributes()){
+            case 'number':
+                    echo 'MIN["'.$name.'"]=parseInt('.$type->{'min'}.');';
+                    echo 'MAX["'.$name.'"]=parseInt('.$type->{'max'}.');';
+                break;
+            case 'text':
+                break;
+            case 'customText':
+                echo 'OPTIONS["'.$name.'"] = [];';
+                foreach($type->{'option'} as $option){
+                    echo 'OPTIONS["'.$name.'"].push("'.$option.'");';
+                }
+                break;
+        }
+
+    }
+}

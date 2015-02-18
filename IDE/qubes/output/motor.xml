@@ -1,4 +1,8 @@
 <?xml version="1.0"?>
 <actor>
     <name>Motor</name>
+    <values type="number">
+        <min>-100</min>
+        <max>100</max>
+    </values>
 </actor>
