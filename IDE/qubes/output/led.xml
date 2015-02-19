@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <actor>
-    <name>LED</name>
-    <values type="customText">
+    <name>Multicolor-LED</name>
+    <values type="options">
         <option>Red</option>
         <option>Green</option>
         <option>Yellow</option>

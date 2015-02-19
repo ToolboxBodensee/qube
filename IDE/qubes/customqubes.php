@@ -58,7 +58,7 @@ function loadValues(){
                 break;
             case 'text':
                 break;
-            case 'customText':
+            case 'options':
                 echo 'OPTIONS["'.$name.'"] = [];';
                 foreach($type->{'option'} as $option){
                     echo 'OPTIONS["'.$name.'"].push("'.$option.'");';

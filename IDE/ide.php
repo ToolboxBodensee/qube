@@ -157,7 +157,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 								</select>
 							</div>
 							<div class="input-group">
-                                <p id="action_options"></p>
+                                <p id="trigger_options"></p>
 								<input type="number" class="form-control" placeholder="Value" aria-describedby="basic-addon" id="switch_value" min="0" max="100">
 								<span class="input-group-addon" id="basic-addon">%</span>
 							</div>
@@ -180,12 +180,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 					</div>
 					<div class="modal-body">
 						<form id="formaddakt" onsubmit="return false">
-							<label>The Output should be:</label>
-							<div class="input-group">
-                                <p id="action_options"></p>
-								<input type="number" class="form-control" placeholder="Value" aria-describedby="basic-addon" id="state_value" min="0" max="100">
-								<span class="input-group-addon" id="basic-addon">%</span>
-							</div>
+                            <label for="action_options">The Output should be:</label>
+                            <p id="action_options"></p>
 						</form>
 					</div>
 					<div class="modal-footer">

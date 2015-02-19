@@ -63,11 +63,39 @@ function init() {
 
 function actionAddClick(ereignis) {
     add_box = ereignis.id;
+    var name = type[add_box];
     switch(cate[ereignis.id]){
         case "Sensor":
+            document.getElementById("trigger_options").innerHTML = "TestText";
             $('#dialog_sensor').modal();
             break;
         case "Aktor":
+            switch(VALUES[name]){
+                case 'number':
+                    document.getElementById("action_options").innerHTML =
+                        '<div class="input-group" id="size">'+
+                        '<input type="number" class="form-control" placeholder="Value" aria-describedby="basic-addon" id="state_value" min="'+MIN[name]+'" max="'+MAX[name]+'">'+
+                        '<span class="input-group-addon" id="basic-addon">%</span>'+
+                        '</div>';
+                    break;
+                case 'text':
+                    document.getElementById("action_options").innerHTML =
+                        '<input type="text" class="form-control" id="state_value" placeholder="Text">';
+                    break;
+                case 'options':
+                    document.getElementById("action_options").innerHTML =
+                        '<select class="form-control" id="select_action">';
+
+                    var select = document.getElementById("select_action");
+                    for(var counter=0; counter<OPTIONS[name].length; counter++){
+                        var option = document.createElement("option");
+                        option.text = OPTIONS[name][counter];
+                        select.add(option);
+                    }
+
+                    document.getElementById("action_options").innerHTML += '</select>';
+                    break;
+            }
             $('#dialog_aktor').modal();
             break;
     }
@@ -110,7 +138,19 @@ function addedClick(){
             document.getElementById("formaddsen").reset();
             break;
         case "Aktor":
-            actions[add_box].push(document.getElementById("state_value").value);
+            var name = type[add_box];
+            switch(VALUES[name]){
+                case 'number':
+                    actions[add_box].push(document.getElementById("state_value").value);
+                    break;
+                case 'text':
+                    actions[add_box].push(document.getElementById("state_value").value);
+                    break;
+                case 'options':
+                    var select_action = document.getElementById("select_action");
+                    actions[add_box].push(select_action.options[select_action.selectedIndex].value);
+                    break;
+            }
             document.getElementById("formaddakt").reset();
             break;
     }

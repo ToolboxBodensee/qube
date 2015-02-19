@@ -1,35 +1,25 @@
 <?xml version="1.0"?>
 <qube>
-  <X-Value length="2">
-    <X0>100</X0>
-    <X1>647</X1>
+  <X-Value length="1">
+    <X0>99</X0>
   </X-Value>
-  <Y-Value length="2">
-    <Y0>100</Y0>
-    <Y1>59</Y1>
+  <Y-Value length="1">
+    <Y0>102</Y0>
   </Y-Value>
-  <Type length="2">
+  <Type length="1">
     <Type0>Touch</Type0>
-    <Type1>LED</Type1>
   </Type>
-  <Cate length="2">
+  <Cate length="1">
     <Cate0>Sensor</Cate0>
-    <Cate1>Aktor</Cate1>
   </Cate>
   <Connections>
-    <Conn1 length="1">
-      <Conn1T0>0-0id</Conn1T0>
-    </Conn1>
-    <Conn2 length="1">
-      <Conn2T0>1-0id</Conn2T0>
-    </Conn2>
+    <Conn1 length="0"/>
+    <Conn2 length="0"/>
   </Connections>
-  <Action length="3">
-    <Action0 length="1">
+  <Action length="2">
+    <Action0 length="2">
       <Action0-0>L23</Action0-0>
+      <Action0-1>L23</Action0-1>
     </Action0>
-    <Action1 length="1">
-      <Action1-0>12</Action1-0>
-    </Action1>
   </Action>
 </qube>
