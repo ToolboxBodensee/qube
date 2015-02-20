@@ -1,4 +1,8 @@
 <?xml version="1.0"?>
 <sensor>
     <name>Touch</name>
+    <values type="options">
+        <option>Pressed</option>
+        <option>Released</option>
+    </values>
 </sensor>

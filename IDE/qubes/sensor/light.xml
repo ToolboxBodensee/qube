@@ -1,4 +1,9 @@
 <?xml version="1.0"?>
 <sensor>
     <name>Brightness</name>
+    <values type="number">
+        <min>0</min>
+        <max>100</max>
+        <unit>%</unit>
+    </values>
 </sensor>

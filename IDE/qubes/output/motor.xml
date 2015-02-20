@@ -4,5 +4,6 @@
     <values type="number">
         <min>-100</min>
         <max>100</max>
+        <unit>%</unit>
     </values>
 </actor>

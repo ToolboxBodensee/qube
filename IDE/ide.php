@@ -148,8 +148,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 					</div>
 					<div class="modal-body">
 						<form id="formaddsen" onsubmit="return false">
-							<div class="form-group">
-								<label for="size">The Sensor should be:</label>
+                            <label for="trigger_options">The Sensor should be:</label>
+                            <p id="trigger_options"></p>
+							<!--<div class="form-group">
+
 								<select class="form-control" id="size">
 									<option>Larger</option>
 									<option>Smaller</option>
@@ -157,10 +159,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 								</select>
 							</div>
 							<div class="input-group">
-                                <p id="trigger_options"></p>
 								<input type="number" class="form-control" placeholder="Value" aria-describedby="basic-addon" id="switch_value" min="0" max="100">
 								<span class="input-group-addon" id="basic-addon">%</span>
-							</div>
+							</div>-->
 						</form>
 					</div>
 					<div class="modal-footer">
@@ -236,6 +237,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 		<script src="js/bootstrap-dialog.min.js"></script>
 		<script type="text/javascript">
+            var VALUES = [];
+            var MIN = [];
+            var MAX = [];
+            var OPTIONS = [[]];
+            var UNIT = [];
 			<?php loadValues(); ?>
 		</script>
 		<script type="text/javascript">

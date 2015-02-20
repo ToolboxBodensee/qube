@@ -66,7 +66,39 @@ function actionAddClick(ereignis) {
     var name = type[add_box];
     switch(cate[ereignis.id]){
         case "Sensor":
-            document.getElementById("trigger_options").innerHTML = "TestText";
+            switch(VALUES[name]){
+                case 'number':
+                    document.getElementById("trigger_options").innerHTML =
+                        '<div class="form-group">'+
+                        '<select class="form-control" id="size">'+
+                        '<option>Larger</option>'+
+                        '<option>Smaller</option>'+
+                        '<option>Equals</option>'+
+                        '</select>'+
+                        '</div>'+
+                        '<div class="input-group">'+
+                        '<input type="number" class="form-control" placeholder="Value" aria-describedby="basic-addon" id="switch_value" min="'+MIN[name]+'" max="'+MAX[name]+'">'+
+                        '<span class="input-group-addon" id="basic-addon">'+UNIT[name]+'</span>'+
+                        ' </div>';
+                    break;
+                case 'text':
+                    document.getElementById("trigger_options").innerHTML =
+                        '<input type="text" class="form-control" id="state_value" placeholder="Text">';
+                    break;
+                case 'options':
+                    document.getElementById("trigger_options").innerHTML =
+                        '<select class="form-control" id="select_action">';
+
+                    var select = document.getElementById("select_action");
+                    for(var counter=0; counter<OPTIONS[name].length; counter++){
+                        var option = document.createElement("option");
+                        option.text = OPTIONS[name][counter];
+                        select.add(option);
+                    }
+
+                    document.getElementById("action_options").innerHTML += '</select>';
+                    break;
+            }
             $('#dialog_sensor').modal();
             break;
         case "Aktor":
@@ -75,7 +107,7 @@ function actionAddClick(ereignis) {
                     document.getElementById("action_options").innerHTML =
                         '<div class="input-group" id="size">'+
                         '<input type="number" class="form-control" placeholder="Value" aria-describedby="basic-addon" id="state_value" min="'+MIN[name]+'" max="'+MAX[name]+'">'+
-                        '<span class="input-group-addon" id="basic-addon">%</span>'+
+                        '<span class="input-group-addon" id="basic-addon">'+UNIT[name]+'</span>'+
                         '</div>';
                     break;
                 case 'text':
@@ -131,14 +163,27 @@ function deleteConnection(element){
 }
 
 function addedClick(){
+    var name = type[add_box];
     switch(cate[add_box]){
         case "Sensor":
-            var size = document.getElementById("size");
-            actions[add_box].push(size.options[size.selectedIndex].value + ' ' + document.getElementById("switch_value").value);
+            switch(VALUES[name]){
+                case 'number':
+                    var size = document.getElementById("size");
+                    actions[add_box].push(size.options[size.selectedIndex].value + ' ' + document.getElementById("switch_value").value);
+                    break;
+                case 'text':
+                    actions[add_box].push(document.getElementById("state_value").value);
+                    break;
+                case 'options':
+                    var select_action = document.getElementById("select_action");
+                    actions[add_box].push(select_action.options[select_action.selectedIndex].value);
+                    break;
+            }
+            /*var size = document.getElementById("size");
+            actions[add_box].push(size.options[size.selectedIndex].value + ' ' + document.getElementById("switch_value").value);*/
             document.getElementById("formaddsen").reset();
             break;
         case "Aktor":
-            var name = type[add_box];
             switch(VALUES[name]){
                 case 'number':
                     actions[add_box].push(document.getElementById("state_value").value);

@@ -8,4 +8,5 @@
     <actor file="led.xml"></actor>
     <actor file="motor.xml"></actor>
     <actor file="speaker.xml"></actor>
+    <actor file="display.xml"></actor>
 </qubes>

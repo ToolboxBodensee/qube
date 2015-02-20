@@ -38,12 +38,6 @@ function loadOutput(){
 }
 
 function loadValues(){
-    echo
-    'var VALUES = [];
-    var MIN = [];
-    var MAX = [];
-    var OPTIONS = [[]];';
-
     $file = simplexml_load_file('qubes/qubes.xml');
     foreach ($file->{'actor'} as $fname) {
         $fname = $fname->attributes();
@@ -55,6 +49,8 @@ function loadValues(){
             case 'number':
                     echo 'MIN["'.$name.'"]=parseInt('.$type->{'min'}.');';
                     echo 'MAX["'.$name.'"]=parseInt('.$type->{'max'}.');';
+                    echo 'UNIT["'.$name.'"]="'.$type->{'unit'}.'";';
+
                 break;
             case 'text':
                 break;
@@ -65,6 +61,28 @@ function loadValues(){
                 }
                 break;
         }
+    }
 
+    foreach ($file->{'sensor'} as $fname) {
+        $fname = $fname->attributes();
+        $output = simplexml_load_file('qubes/sensor/' . $fname);
+        $name = $output->{'name'};
+        $type = $output->{'values'};
+        echo 'VALUES["'.$name.'"]="'.($type->attributes()).'";';
+        switch($type->attributes()){
+            case 'number':
+                    echo 'MIN["'.$name.'"]=parseInt('.$type->{'min'}.');';
+                    echo 'MAX["'.$name.'"]=parseInt('.$type->{'max'}.');';
+                    echo 'UNIT["'.$name.'"]="'.$type->{'unit'}.'";';
+                break;
+            case 'text':
+                break;
+            case 'options':
+                    echo 'OPTIONS["'.$name.'"] = [];';
+                    foreach($type->{'option'} as $option){
+                        echo 'OPTIONS["'.$name.'"].push("'.$option.'");';
+                    }
+                break;
+        }
     }
 }

@@ -1,4 +1,9 @@
 <?xml version="1.0"?>
 <sensor>
     <name>Distance</name>
+    <values type="number">
+        <min>0</min>
+        <max>3</max>
+        <unit>meter</unit>
+    </values>
 </sensor>
